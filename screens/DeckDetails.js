@@ -102,8 +102,8 @@ export default class DeckDetails extends Component {
                     data={this.state.deck.questions}
                     renderItem={({ item }) =>
                         <View style={cell}>
-                            <Text style={question}>{item.question}</Text>
-                            <Text style={answer}>{item.answer}</Text>
+                            <Text style={question}>Pergunta: {item.question}</Text>
+                            <Text style={answer}>Resposta: {item.answer}</Text>
                             <View style={{backgroundColor: '#eeeeee', height: 0.5 }}/>
                         </View>
                     }

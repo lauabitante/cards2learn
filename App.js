@@ -7,7 +7,7 @@ import DeckList from './screens/DeckList';
 import DeckDetails from './screens/DeckDetails';
 import Quiz from './screens/Quiz';
 import store from 'react-native-simple-store';
-import { RotationGestureHandler } from 'react-native-gesture-handler';
+import { Icon } from 'react-native-elements'
 
 const Stack = createStackNavigator();
 export default class App extends Component {
@@ -25,33 +25,34 @@ export default class App extends Component {
                         component={DeckList}
                         options={{ title: 'Cards2Learn' }}
                     />
-                    <Stack.Screen name="Quiz" 
-                        component={Quiz} 
-                        options={({ route, navigation }) => ({ 
-                            title: route.params.name, 
-                            headerRight: () => <Button 
-                                                    title={"Detalhes"} 
-                                                    onPress={() => navigation.navigate('DeckDetails', {
-                                                        deck: route.params.deck,
-                                                        name: route.params.deck.name
-                                                    })}/>
-                            })}
-                    />
-                    <Stack.Screen name="DeckDetails" 
-                        component={DeckDetails} 
-                        options={({ route, navigation }) => ({ 
+                    <Stack.Screen name="Quiz"
+                        component={Quiz}
+                        options={({ route, navigation }) => ({
                             title: route.params.name,
-                            headerRight: () => <Button 
-                            title={"Deletar"} 
-                            onPress={() => {
-                                store.get("decks").then(res => {
-                                    if (res) { 
-                                        const decks = Object.values(res).filter(d => d.id != route.params.deck.id)
-                                        store.save('decks', decks)
-                                        navigation.popToTop()
-                                    }
-                                });
-                            }}/>
+                            headerRight: () => <Icon
+                                iconStyle={{ marginRight: 8 }}
+                                name="gear"
+                                size={30}
+                                type='evilicon'
+                                onPress={() => navigation.navigate('DeckDetails', {
+                                    deck: route.params.deck,
+                                    name: route.params.deck.name
+                                })} />
+                        })}
+                    />
+                    <Stack.Screen name="DeckDetails"
+                        component={DeckDetails}
+                        options={({ route, navigation }) => ({
+                            title: route.params.name,
+                            headerRight: () => <Icon
+                                iconStyle={{ marginRight: 8 }}
+                                name="trash"
+                                size={30}
+                                type='evilicon'
+                                onPress={() => navigation.navigate('DeckDetails', {
+                                    deck: route.params.deck,
+                                    name: route.params.deck.name
+                                })} />
                         })}
                     />
                 </Stack.Navigator>
@@ -60,4 +61,4 @@ export default class App extends Component {
     }
 };
 
-const styles = StyleSheet.create({ });
+const styles = StyleSheet.create({});
