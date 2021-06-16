@@ -6,7 +6,7 @@ import {
   Text,
   Button
 } from 'react-native';
-import uuid from 'react-native-uuid'
+import { Icon } from 'react-native-elements'
 
 import {
   Colors,
@@ -43,13 +43,13 @@ export default class Quiz extends Component {
   }
 
   _remove = (dir) => {
-    const cardsLeft = this.state.isReviewing 
-    ? this._dataSource()
-    : this._dataSource().filter(card => !this.state.answered.find(c => c.id === card.id))
+    const cardsLeft = this.state.isReviewing
+      ? this._dataSource()
+      : this._dataSource().filter(card => !this.state.answered.find(c => c.id === card.id))
 
     if (cardsLeft.length) {
       const card = cardsLeft[cardsLeft.length - 1]
-      const index = this._dataSource().map(c => c.id).indexOf(card.id) 
+      const index = this._dataSource().map(c => c.id).indexOf(card.id)
       this._onSwipe(dir, card)
       this._dataSource()[index].current.swipe(dir)
     }
@@ -58,11 +58,11 @@ export default class Quiz extends Component {
   _onSwipe = (direction, card) => {
     const filteredCardsToReview = this.state.toReview.filter(c => c.id !== card.id)
     if (direction === 'left') {
-      this.setState({ toReview: [card, ...filteredCardsToReview], answered: [...this.state.answered, card]  })
+      this.setState({ toReview: [card, ...filteredCardsToReview], answered: [...this.state.answered, card] })
     } else if (this.state.isReviewing) {
-      this.setState({ toReview: [...filteredCardsToReview]})
+      this.setState({ toReview: [...filteredCardsToReview] })
     } else {
-      this.setState({ answered: [...this.state.answered, card]})
+      this.setState({ answered: [...this.state.answered, card] })
     }
   }
 
@@ -127,17 +127,27 @@ export default class Quiz extends Component {
           : "Revisar"} />)
   }
 
+  _bottomButtons = () => {
+
+    if (this._hasNoQuestions()) { return }
+    
+    return (
+      <View style={styles.buttons}>
+      <Icon name='close' type='evilicon' size={100} onPress={() => this._remove('left')} />
+      <View style={{ flex: 1 }} />
+      <Icon name='check' type='evilicon' size={100} onPress={() => this._remove('right')} />
+    </View>
+    )
+    
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.screen}>
         {this._content()}
+        {this._reviewButton()}
         <View style={{ flex: 1 }}>
-        <View style={styles.buttons}>
-            <Button onPress={() => this._remove('left')} title='Não sei!' />
-            <View style={{ flex: 1 }} />
-            <Button onPress={() => this._remove('right')} title='Já sei!' />
-          </View>
-          {this._reviewButton()}
+          {this._bottomButtons()}
         </View>
       </SafeAreaView>
     );

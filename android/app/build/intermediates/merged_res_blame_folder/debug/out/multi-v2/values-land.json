@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/carloscorrea/projects/unisinos/Flashcards/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/Users/carloscorrea/projects/unisinos/cards2learn/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/carloscorrea/.gradle/caches/transforms-2/files-2.1/d14dbad7340cad958a2e361a440b498d/appcompat-1.1.0/res/values-land/values-land.xml",
