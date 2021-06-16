@@ -4,6 +4,7 @@ import Deck from "../widgets/Deck.js"
 import uuid from 'react-native-uuid'
 import store from 'react-native-simple-store';
 import Dialog from "react-native-dialog";
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class DeckList extends Component {
 
@@ -105,6 +106,7 @@ export default class DeckList extends Component {
                             return (
                                 <Deck
                                     name={"Criar baralho"}
+                                    deckStyle={{ backgroundColor: "#b0c4de" }}
                                     details={" "}
                                     onPress={this._tapAddNewDeck} />
                             );

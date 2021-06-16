@@ -92,7 +92,7 @@ export default class DeckDetails extends Component {
     }
 
     render() {
-        const { container, question, answer, input, largeInput, modal, title, cell } = styles
+        const { container, question, answer, input, largeInput, modal, title, cell, button } = styles
         return (
             <SafeAreaView style={container}>
                 <SwipeListView
@@ -121,6 +121,7 @@ export default class DeckDetails extends Component {
                 <Button
                     onPress={this._toggleForm}
                     title="Novo"
+                    color="#778899"
                 />
                 <Overlay
                     overlayStyle={modal}
@@ -140,19 +141,19 @@ export default class DeckDetails extends Component {
                         {Platform.OS === 'ios' &&
                             <View style={{ flexDirection: 'row', flex: 1 }}>
                                 <TouchableOpacity onPressIn={this._toggleForm}>
-                                    <Button title={"Cancelar"} />
+                                    <Button title={"Cancelar"} color="#778899"/>
                                 </TouchableOpacity>
                                 <View style={{ flex: 1 }} />
                                 <TouchableOpacity onPressIn={this._saveNewQuestion}>
-                                    <Button title={"Salvar"} />
+                                    <Button title={"Salvar"} color="#778899"/>
                                 </TouchableOpacity>
                             </View>
                         }
                         {Platform.OS === 'android' &&
                             <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <Button title={"Cancelar"} onPress={this._toggleForm} />
+                                <Button title={"Cancelar"} onPress={this._toggleForm} color="#778899"/>
                                 <View style={{ flex: 1 }} />
-                                <Button title={"Salvar"} onPress={this._saveNewQuestion} />
+                                <Button title={"Salvar"} onPress={this._saveNewQuestion} color="#778899"/>
                             </View>
                         }
 

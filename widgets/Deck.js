@@ -11,7 +11,7 @@ export default class Deck extends Component {
             <View style={container}>
                 <TouchableOpacity 
                     onPress={this.props.onPress}
-                    style={cell}>
+                    style={[cell, this.props.deckStyle]}>
                     <Text style={title}>{this.props.name}</Text>
                     <Text>{this.props.details}</Text>
                 </TouchableOpacity>
@@ -25,12 +25,15 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         width: "50%",
         height: 100,
-        padding: 1
+        marginVertical: 4,
+        padding: 1,
     },
     cell: {
         backgroundColor: Colors.light,
         margin: 2,
-        padding: 30
+        padding: 20,
+        height: 100,
+        borderRadius: 10
     },
     title: {
         fontSize: 18,

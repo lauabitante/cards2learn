@@ -92,6 +92,7 @@ export default class Quiz extends Component {
           <Text style={styles.centeredText}>Sem perguntas cadastradas!</Text>
           <Button
             onPress={this._navigateToDetails}
+            color="#778899"
             title={"Toque para cadastrar"} />
         </View>
       )
@@ -122,6 +123,7 @@ export default class Quiz extends Component {
       <Button
         style={styles.reviewButton}
         onPress={this._toggleReview}
+        color="#778899"
         title={this.state.isReviewing
           ? "Responder questões"
           : "Revisar"} />)
