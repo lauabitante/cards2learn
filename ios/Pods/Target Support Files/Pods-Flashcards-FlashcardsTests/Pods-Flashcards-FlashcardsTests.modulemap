@@ -1,0 +1,6 @@
+module Pods_Flashcards_FlashcardsTests {
+  umbrella header "Pods-Flashcards-FlashcardsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

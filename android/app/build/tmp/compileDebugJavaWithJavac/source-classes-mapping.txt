@@ -1,0 +1,14 @@
+com/flashcards/MainActivity.java
+ com.flashcards.MainActivity
+com/flashcards/ReactNativeFlipper.java
+ com.flashcards.ReactNativeFlipper
+ com.flashcards.ReactNativeFlipper$1
+ com.flashcards.ReactNativeFlipper$2
+ com.flashcards.ReactNativeFlipper$2$1
+com/flashcards/MainApplication.java
+ com.flashcards.MainApplication
+ com.flashcards.MainApplication$1
+com/flashcards/BuildConfig.java
+ com.flashcards.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

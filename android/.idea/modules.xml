@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Flashcards.iml" filepath="$PROJECT_DIR$/.idea/modules/Flashcards.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Flashcards.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Flashcards.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/737014929/Flashcards.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/737014929/Flashcards.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/424814605/Flashcards.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/424814605/Flashcards.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1671618922/Flashcards.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1671618922/Flashcards.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/448856690/Flashcards.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/448856690/Flashcards.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/759383891/Flashcards.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/759383891/Flashcards.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-828562645/Flashcards.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-828562645/Flashcards.react-native-screens.iml" />
+    </modules>
+  </component>
+</project>
