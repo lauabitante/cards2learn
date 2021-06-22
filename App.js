@@ -8,7 +8,7 @@ import DeckDetails from './screens/DeckDetails';
 import Quiz from './screens/Quiz';
 import store from 'react-native-simple-store';
 import { Icon } from 'react-native-elements'
-import defaultDecks from './default_decks.json';
+// import defaultDecks from './default_decks.json';
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']);
 LogBox.ignoreAllLogs();
@@ -16,16 +16,9 @@ LogBox.ignoreAllLogs();
 const Stack = createStackNavigator();
 export default class App extends Component {
 
-    componentDidMount() {
-        // store.save("preferences", null)
-
-        store.get("preferences").then(res => {    
-            if (res == null) {
-                console.log("Ainda nao carregou perguntas default")
-                store.save('decks', defaultDecks)
-                store.save("preferences", { loadedDefaultDecks: true })
-            }
-          }).catch(err => console.log(err));
+    constructor(props) {
+        super(props)
+    
         
     }
 
@@ -63,7 +56,6 @@ export default class App extends Component {
                                 size={30}
                                 type='evilicon'
                                 onPress={() => {
-                                    
                                     store.get("decks").then(res => {
                                         const remainingDecks = Object.values(res).filter(d => d.id !== route.params.deck.id)
                                         store.save('decks', remainingDecks)
