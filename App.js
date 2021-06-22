@@ -8,12 +8,25 @@ import DeckDetails from './screens/DeckDetails';
 import Quiz from './screens/Quiz';
 import store from 'react-native-simple-store';
 import { Icon } from 'react-native-elements'
+import defaultDecks from './default_decks.json';
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']);
+LogBox.ignoreAllLogs();
 
 const Stack = createStackNavigator();
 export default class App extends Component {
 
     componentDidMount() {
-        // store.delete("decks");
+        // store.save("preferences", null)
+
+        store.get("preferences").then(res => {    
+            if (res == null) {
+                console.log("Ainda nao carregou perguntas default")
+                store.save('decks', defaultDecks)
+                store.save("preferences", { loadedDefaultDecks: true })
+            }
+          }).catch(err => console.log(err));
+        
     }
 
     render() {
@@ -49,10 +62,13 @@ export default class App extends Component {
                                 name="trash"
                                 size={30}
                                 type='evilicon'
-                                onPress={() => navigation.navigate('DeckDetails', {
-                                    deck: route.params.deck,
-                                    name: route.params.deck.name
-                                })} />
+                                onPress={() => {
+                                    
+                                    store.get("decks").then(res => {
+                                        const remainingDecks = Object.values(res).filter(d => d.id !== route.params.deck.id)
+                                        store.save('decks', remainingDecks)
+                                    }).then(() => navigation.navigate('DeckList'))
+                                }} />
                         })}
                     />
                 </Stack.Navigator>

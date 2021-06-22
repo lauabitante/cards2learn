@@ -1,0 +1,114 @@
+[
+    {
+        "id": "1",
+        "name": "Inglês (Animals)",
+        "questions": [
+            {
+                "id": "1",
+                "question": "Dog",
+                "answer": "Cachorro"
+            },
+            {
+                "id": "2",
+                "question": "Bird",
+                "answer": "Pássaro"
+            },
+            {
+                "id": "3",
+                "question": "Monkey",
+                "answer": "Macaco"
+            },
+            {
+                "id": "4",
+                "question": "Horse",
+                "answer": "Cavalo"
+            },
+            {
+                "id": "5",
+                "question": "Goose",
+                "answer": "Ganço"
+            },
+            {
+                "id": "6",
+                "question": "Duck",
+                "answer": "Pato"
+            },
+            {
+                "id": "7",
+                "question": "Lion",
+                "answer": "Leão"
+            },
+            {
+                "id": "8",
+                "question": "Tiger",
+                "answer": "Tigre"
+            },
+            {
+                "id": "9",
+                "question": "Elephant",
+                "answer": "Elefante"
+            },
+            {
+                "id": "10",
+                "question": "Giraffe",
+                "answer": "Girafa"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Conhecimentos Gerais",
+        "questions": [
+            {
+                "id": "1",
+                "question": "De quem é a famosa frase “Penso, logo existo”?",
+                "answer": "Descartes"
+            },
+            {
+                "id": "2",
+                "question": "De onde é a invenção do chuveiro elétrico?",
+                "answer": "Brasil"
+            },
+            {
+                "id": "3",
+                "question": "Quais o menor e o maior país do mundo?",
+                "answer": "Vaticano e Rússia"
+            },
+            {
+                "id": "4",
+                "question": "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
+                "answer": "João Goulart"
+            },
+            {
+                "id": "5",
+                "question": "Qual o livro mais vendido no mundo a seguir à Bíblia?",
+                "answer": "Dom Quixote"
+            },
+            {
+                "id": "6",
+                "question": "Quantas casas decimais tem o número pi?",
+                "answer": "Infinitas"
+            },
+            {
+                "id": "7",
+                "question": "Atualmente, quantos elementos químicos a tabela periódica possui?",
+                "answer": "118"
+            },
+            {
+                "id": "8",
+                "question": "Qual o número mínimo de jogadores numa partida de futebol?",
+                "answer": "7. Uma partida de futebol conta com o número máximo de 11 jogadores e mínimo de 7, contando com o goleiro."
+            },
+            {
+                "id": "9",
+                "question": "Quem pintou 'Guernica'",
+                "answer": "Pablo Picasso"
+            },
+            {
+                "id": "10",
+                "question": "Quanto tempo a luz do Sol demora para chegar à Terra?",
+                "answer": "8 minutos"
+            }
+        ]
+    }
+]
