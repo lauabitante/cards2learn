@@ -110,5 +110,26 @@
                 "answer": "8 minutos"
             }
         ]
-    }
+    },
+    {
+                "id": "3",
+                "name": "Biologia",
+                "questions": [
+                    {
+                        "id": "1",
+                        "question": "Conjunto de seres vivos de diferentes espécies que interagem entre si e com o meio",
+                        "answer": "Ecossistema"
+                    },
+                    {
+                        "id": "2",
+                        "question": "Unidade estrutural e funcional de todos os seres vivos",
+                        "answer": "Célula"
+                    },
+                    {
+                        "id": "3",
+                        "question": "Grupo de indivíduos da mesma espécie que. Habita num determinado local",
+                        "answer": "População"
+                    }
+                ]
+            }
 ]
