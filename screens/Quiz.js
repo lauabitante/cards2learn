@@ -135,9 +135,9 @@ export default class Quiz extends Component {
     
     return (
       <View style={styles.buttons}>
-      <Icon name='close' type='evilicon' size={100} onPress={() => this._remove('left')} />
+      <Icon name='close' type='evilicon' color={"#D75959"} size={100} onPress={() => this._remove('left')} />
       <View style={{ flex: 1 }} />
-      <Icon name='check' type='evilicon' size={100} onPress={() => this._remove('right')} />
+      <Icon name='check' type='evilicon' color={"#76CD53"} size={100} onPress={() => this._remove('right')} />
     </View>
     )
     

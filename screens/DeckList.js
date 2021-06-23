@@ -4,7 +4,6 @@ import Deck from "../widgets/Deck.js"
 import uuid from 'react-native-uuid'
 import store from 'react-native-simple-store';
 import Dialog from "react-native-dialog";
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class DeckList extends Component {
 
