@@ -58,7 +58,11 @@ export default class Quiz extends Component {
   _onSwipe = (direction, card) => {
     const filteredCardsToReview = this.state.toReview.filter(c => c.id !== card.id)
     if (direction === 'left') {
-      this.setState({ toReview: [card, ...filteredCardsToReview], answered: [...this.state.answered, card] })
+      if(this.state.isReviewing) {
+        this.setState({ toReview: [card, ...filteredCardsToReview] })
+      } else {
+        this.setState({ toReview: [card, ...filteredCardsToReview], answered: [...this.state.answered, card] })
+      }
     } else if (this.state.isReviewing) {
       this.setState({ toReview: [...filteredCardsToReview] })
     } else {
@@ -67,7 +71,14 @@ export default class Quiz extends Component {
   }
 
   _toggleReview = () => {
-    this.setState({ isReviewing: !this.state.isReviewing, answered: [] })
+    if (this.state.isReviewing) {
+
+      this.setState({ isReviewing: false, answered: [], toReview: [] })
+
+    } else {
+
+      this.setState({ isReviewing: true })
+    }
   }
 
   _dataSource = () => {

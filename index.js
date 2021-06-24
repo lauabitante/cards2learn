@@ -11,7 +11,7 @@ import defaultDecks from './default_decks.json';
 AppRegistry.registerRunnable(appName, async initialProps => {
     try {
 
-        // store.save("didLoadDefaultDecks", null) // uncomment to reset default decks
+        //  store.save("didLoadDefaultDecks", null) // uncomment to reset default decks
         store.get("didLoadDefaultDecks").then(res => {    
             if (res == null) {
                 store.save('decks', defaultDecks)
