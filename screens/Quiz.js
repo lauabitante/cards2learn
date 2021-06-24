@@ -77,6 +77,7 @@ export default class Quiz extends Component {
   }
 
   _hasNoQuestions = () => !this.state.isReviewing && (this._dataSource() && this._dataSource().length == 0)
+  _hasAnsweredAllQuestions = () => !this.state.isReviewing && this.state.deck.questions.length == this.state.answered.length
 
   _navigateToDetails = () => {
     this.props.navigation.navigate('DeckDetails', {
@@ -117,37 +118,67 @@ export default class Quiz extends Component {
   }
 
   _reviewButton = () => {
-    if (this._hasNoQuestions()) { return }
 
-    return (
-      <Button
+    if (this.state.isReviewing) {
+      return (<Button
         style={styles.reviewButton}
         onPress={this._toggleReview}
         color="#778899"
-        title={this.state.isReviewing
-          ? "Responder questões"
-          : "Revisar"} />)
+        title={"Recomeçar"} />)
+    } else {
+
+      if (this._hasNoQuestions() || !this._hasAnsweredAllQuestions()) { return }
+
+      return (
+        <Button
+          style={styles.reviewButton}
+          onPress={this._toggleReview}
+          color="#778899"
+          title={"Revisar"} />)
+    }
   }
 
   _bottomButtons = () => {
 
     if (this._hasNoQuestions()) { return }
-    
+
     return (
       <View style={styles.buttons}>
-      <Icon name='close' type='evilicon' color={"#D75959"} size={100} onPress={() => this._remove('left')} />
-      <View style={{ flex: 1 }} />
-      <Icon name='check' type='evilicon' color={"#76CD53"} size={100} onPress={() => this._remove('right')} />
-    </View>
+        <Icon name='close' type='evilicon' color={"#D75959"} size={100} onPress={() => this._remove('left')} />
+        <View style={{ flex: 1 }} />
+        <Icon name='check' type='evilicon' color={"#76CD53"} size={100} onPress={() => this._remove('right')} />
+      </View>
     )
-    
+  }
+
+  _renderBanner = () => {
+
+    if (this.state.isReviewing) {
+      if (this.state.toReview.length == 0) {
+        return (
+          <Text style={styles.score}>Sem cartões para revisar!</Text>
+        )
+      } else {
+        return (
+          <Text style={styles.score}>Revisando</Text>
+        )
+      }
+    } else if (!this.state.isReviewing){
+
+      if (!this._hasAnsweredAllQuestions()) { return }
+      const text = `Acertou ${this.state.deck.questions.length - this.state.toReview.length} de ${this.state.deck.questions.length}`
+      return (
+        <Text style={styles.score}>{text}</Text>
+      )
+    }
   }
 
   render() {
     return (
       <SafeAreaView style={styles.screen}>
-        {this._content()}
+        {this._renderBanner()}
         {this._reviewButton()}
+        {this._content()}
         <View style={{ flex: 1 }}>
           {this._bottomButtons()}
         </View>
@@ -183,5 +214,12 @@ const styles = StyleSheet.create({
   reviewButton: {
     alignItems: 'flex-end',
     padding: 20
+  },
+  score: {
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold',
+    padding: 20,
+    backgroundColor: '#DADADA'
   }
 });
