@@ -111,7 +111,7 @@ export default class DeckDetails extends Component {
                         <View style={styles.rowBack}>
                         <View style={[styles.backRightBtn, styles.backRightBtnRight]}>
                             <Button 
-                                color={'transparent'}
+                                color={Platform.OS === 'ios' ? 'white' : 'transparent'}
                                 title={"Deletar"} 
                                 onPress={() => this._deleteRow(data)} />
                         </View>
