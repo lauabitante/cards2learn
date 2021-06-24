@@ -111,7 +111,7 @@ export default class DeckDetails extends Component {
                         <View style={styles.rowBack}>
                         <View style={[styles.backRightBtn, styles.backRightBtnRight]}>
                             <Button 
-                                color={'white'}
+                                color={'transparent'}
                                 title={"Deletar"} 
                                 onPress={() => this._deleteRow(data)} />
                         </View>
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         position: 'absolute',
         top: 0,
-        width: 75,
+        width: 75
     },
     backRightBtnRight: {
         backgroundColor: '#ff9999',

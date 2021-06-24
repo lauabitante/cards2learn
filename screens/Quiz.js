@@ -142,6 +142,8 @@ export default class Quiz extends Component {
 
     if (this._hasNoQuestions()) { return }
 
+    if (this._hasAnsweredAllQuestions() || (this.state.isReviewing && this.state.toReview.length == 0)) { return }
+
     return (
       <View style={styles.buttons}>
         <Icon name='close' type='evilicon' color={"#D75959"} size={100} onPress={() => this._remove('left')} />
@@ -152,6 +154,8 @@ export default class Quiz extends Component {
   }
 
   _renderBanner = () => {
+
+    if (this._hasNoQuestions()) { return }
 
     if (this.state.isReviewing) {
       if (this.state.toReview.length == 0) {
