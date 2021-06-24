@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         position: 'absolute',
         top: 0,
-        width: 75
+        width: 75,
     },
     backRightBtnRight: {
         backgroundColor: '#ff9999',
